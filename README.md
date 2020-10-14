@@ -1,32 +1,34 @@
-# react-memory-stats
+# next-react-memory-stats
 
-This Component is based on Paul Irish's [memory-stats](https://github.com/paulirish/memory-stats.js).
+This Component is forked from [vigneshshanmugam/react-memorystats](https://github.com/vigneshshanmugam/react-memorystats), which mainly fixes the issue caused by ssr by importing by [dynamic import](https://nextjs.org/docs/advanced-features/dynamic-import) and make the `statsStyle` as the local variable.
 
 ![image](http://i.imgur.com/eUCFcAH.gif)
 
 ### Installation
 
 ```javascript
-yarn add react-memorystats
+yarn add next-react-memory-stats
 ```
 
 ### Usage
 
 ```
-import { render } from 'react-dom';
-import MemoryStatsComponent from 'react-memorystats';
+import dynamic from "next/dynamic";
+const MemoryStatsComponent = dynamic(
+  () => import("next-react-memory-stats"),
+  { ssr: false }
+)
 
-render(
-  <MemoryStatsComponent corner="topLeft" />,
-  document.getElementById("container")
-);
+function Component() {
+  return (
+    <MemoryStatsComponent corner="topLeft" />
+  );
+}
 ```
 
 #### Config
 
    + corner - topLeft, topRight (default), bottomLeft, bottomRight
-
-check the example code [here](https://github.com/vigneshshanmugam/react-memory-stats/blob/master/example).
 
 ### Start Chrome with `--enable-precise-memory-info`
 
@@ -48,5 +50,4 @@ Otherwise the results from performance.memory are bucketed and less useful.
 yarn install
 // run example locally and start server
 yarn start
-
 ```
