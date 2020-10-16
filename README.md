@@ -1,6 +1,6 @@
 # next-react-memory-stats
 
-This Component is forked from [vigneshshanmugam/react-memorystats](https://github.com/vigneshshanmugam/react-memorystats), which mainly fixes the issue caused by ssr by importing by [dynamic import](https://nextjs.org/docs/advanced-features/dynamic-import) and make the `statsStyle` as the local variable.
+This Component is forked from [vigneshshanmugam/react-memorystats](https://github.com/vigneshshanmugam/react-memorystats), which mainly fixes the issue caused by ssr by importing by [dynamic import](https://nextjs.org/docs/advanced-features/dynamic-import) and making the `statsStyle` as the local variable.
 
 ![image](http://i.imgur.com/eUCFcAH.gif)
 
